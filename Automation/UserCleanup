@@ -1,0 +1,19 @@
+//Takes input from a text file and removes the users listed (the usernames are required to be exact)
+
+$removableUsers = Get-Content "C:\Your Directory Here";
+net user $removableUsers.trim() /delete;
+
+//Checks to make sure those accounts don't exist
+
+Get-WmiObject Win32_UserAccount > users.txt;
+$users = Get-Content users.txt;
+for($user in $users) {
+  if($removeableUsers -contains $user)
+    Write-Host $user;
+  }
+}
+
+//Cleans up the files afterwards
+
+rm -r users.txt;
+rm -r "C:\Your Directory Here";
