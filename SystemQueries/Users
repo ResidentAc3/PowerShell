@@ -1,0 +1,11 @@
+//This will query for the user accounts, and list their names only
+
+Get-WmiObject Win32_UserAccount | ft name
+
+//This will query for the user accounts, and list all information
+
+Get-Wmi Object Win32_UserAccount
+
+//This will query for the user accounts, and list their names and SID
+
+Get-WmiObject Win32_UserAccount | ft name, SID
