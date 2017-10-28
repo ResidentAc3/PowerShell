@@ -1,0 +1,3 @@
+//Will list all information regarding the system you're on
+
+Get-WmiObject Win32_OperatingSystem
